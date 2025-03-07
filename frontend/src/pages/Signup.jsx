@@ -30,9 +30,10 @@ export default function Signup() {
   
       // Show success message
       toast.success("Signup Successful!");
-      
-      // Navigate to home or login page after successful signup
-      navigate("/");
+            
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
   
     } catch (err) {
       // Show the error message dynamically from the backend or a default one

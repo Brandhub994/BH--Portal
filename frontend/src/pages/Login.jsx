@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import bgImage from '../assets/bg.png';
 import { LoginAPI } from '../services/auth';
 import { toast } from "react-toastify";
@@ -21,16 +21,18 @@ export default function Login() {
       toast.success("Login Successful")
       setEmail('');
       setPassword('');
-
-      navigate("/dashboard");
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 2000);
       
       
-    } catch (error) {
-      toast.error("Invalid email or password!")
+    } catch {
+      toast.error("Invalid email or password!");
       // On success, clear the form fields
       setEmail('');
       setPassword('');
-  }};
+    }
+  };
 
   // Toggle password visibility
   const togglePasswordVisibility = () => {
@@ -97,7 +99,7 @@ export default function Login() {
           >
             Login
           </button>
-        </form>
+        </form> 
 
         <p className="text-sm text-center text-gray-600">
           Don’t have an account? <a href="/signup" className="text-indigo-500 hover:underline">Sign up</a>
