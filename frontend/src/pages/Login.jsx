@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import bgImage from '../assets/bg.png';
 import { LoginAPI } from '../services/auth';
 import { toast } from "react-toastify";
@@ -17,14 +17,13 @@ export default function Login() {
     e.preventDefault();
 
     try { 
-      await LoginAPI(email, password)
-      toast.success("Login Successful")
+      await LoginAPI(email, password);
+      toast.success("Login Successful");
       setEmail('');
       setPassword('');
       setTimeout(() => {
         navigate("/dashboard");
-      }, 2000);
-      
+      }, 2000); 
       
     } catch {
       toast.error("Invalid email or password!");
@@ -41,10 +40,9 @@ export default function Login() {
 
   return (
     <div
-    className="flex items-center bg-blue-400 justify-center min-h-screen bg-cover bg-center"
+      className="flex items-center bg-blue-400 justify-center min-h-screen bg-cover bg-center"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
-
       <div className="absolute top-5 left-10">
         <h1 className="text-2xl font-bold text-[white]">BrandHub</h1>
       </div>
